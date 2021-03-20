@@ -83,24 +83,24 @@
 %- binding side width of [odd, even] page = [left, right] side width
 %- left side width of [odd, even] page = 1.0in (fixed) + hoffset + [odd, even]sidemargin
 %- assuming A4 paper (210mm x 297mm)
-\setlength{\textwidth}{146.6mm}% set required text width first
-\setlength{\hoffset}{0mm}% set horizontal offset
+\setlength{\textwidth}{155mm}% set required text width first
+\setlength{\hoffset}{-1.0in}% set horizontal offset
 \ifsuda@print% if print layout enabled
-    \setlength{\oddsidemargin}{12.6mm}% binding side margin
-    \setlength{\evensidemargin}{0mm}% ensure uniform binding side width for printing
+    \setlength{\oddsidemargin}{30mm}% binding side margin
+    \setlength{\evensidemargin}{25mm}% ensure uniform binding side width for printing
 \else
-    \setlength{\oddsidemargin}{6.3mm}% left side margin
-    \setlength{\evensidemargin}{6.3mm}% ensure uniform left side width for EThesis
+    \setlength{\oddsidemargin}{27.5mm}% left side margin
+    \setlength{\evensidemargin}{27.5mm}% ensure uniform left side width for EThesis
 \fi
 \setlength{\marginparwidth}{35pt}% width of margin notes
 \setlength{\marginparsep}{10pt}% width of space between body text and margin notes
 %- part two -- vertical heights
 %- top height + textheight + bottom height = paperheight
 %- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep 
-\setlength{\textheight}{246.2mm}% set required text height first
-\setlength{\voffset}{0mm}% set vertical offset
-\setlength{\topmargin}{-10.4mm}% vertical margin above header
-\setlength{\headheight}{12pt}% header height
+\setlength{\textheight}{230mm}% set required text height first
+\setlength{\voffset}{-1.0in}% set vertical offset
+\setlength{\topmargin}{23.5mm}% vertical margin above header
+\setlength{\headheight}{0mm}% header height
 \setlength{\headsep}{17.5pt}% vertical margin between header and body text
 \setlength{\footskip}{10.4mm}% vertical margin between footer and body text
 %- specifies the amount of space between paragraphs.
