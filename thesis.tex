@@ -11,7 +11,7 @@
 %---------------------------------------------------------------------------%
 %->> Document settings
 %---------------------------------------------------------------------------%
-\usepackage[super,list]{style/artratex}% document settings
+\usepackage[super,list,xlink]{style/artratex}% document settings
 %- usage: \usepackage[option1,option2,...,optionN]{artratex}
 %- Multiple optional arguments:
 %- [bibtex|biber]% set bibliography processor and package
@@ -31,10 +31,14 @@
 %- [math]% enable some extra math packages
 %- [xlink]% disable link colors
 \usepackage{style/artracom}% user defined commands
-\usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage{chemformula}% Formula subscripts using \ch{}
+\usepackage{amsmath}
+\renewcommand*{\floatpagefraction}{0.80}% 图片占据页面80%时，成为单页图
+\renewcommand{\bibfont}{\zihao{-4}}% 参考文献使用小4号字体
 %---------------------------------------------------------------------------%
 %->> Document inclusion
 %---------------------------------------------------------------------------%
+\renewcommand{\cleardoublepage}{\clearpage}% 删除双面排版的空白页
 %\includeonly{tex/Chap_1,...,tex/Chap_N}% selected files compilation
 %---------------------------------------------------------------------------%
 %->> Document content
@@ -63,21 +67,21 @@
 %-
 \mainmatter% initialize the environment
 \input{tex/mainmatter}% 各章内容
-%-
-%-> Appendix
-%-
-\cleardoublepage%
-\appendix% initialize the environment
-\fancyhead[LE,RO]{\footnotesize 附录}% structure elements
-\fancyhead[LO,RE]{\footnotesize 此处需要重新输入一次大标题}% 临时解决方案
-\input{tex/appendix}% 附录
+% %-
+% %-> Appendix
+% %-
+% \cleardoublepage%
+% \appendix% initialize the environment
+% \fancyhead[LE,RO]{\footnotesize 附录}% structure elements
+% \fancyhead[LO,RE]{\footnotesize 此处需要重新输入一次大标题}% 临时解决方案
+% \input{tex/appendix}% 附录
 %-
 %-> Backmatter: bibliography
 %-
 \backmatter% initialize the environment
 \intotoc*{\cleardoublepage}{\bibname}% add link to toc
 \artxifstreq{\artxbib}{bibtex}{% enable bibtex
-    \bibliography{Biblio/reference}% bibliography
+    \bibliography{biblio/reference}% bibliography
 }{%
     \printbibliography% bibliography
 }
