@@ -357,7 +357,7 @@
 %- chapter
 \ctexset {
     chapter = {
-        format = \linespread{1.0}\zihao{4}\bfseries\sffamily\centering,
+        format = \linespread{1.0}\zihao{-2}\bfseries\sffamily\centering,
         nameformat = {},
         titleformat = {},
         number = \zhnum{chapter},
@@ -371,7 +371,7 @@
 %- section
 \ctexset {
     section = {
-        format = \linespread{1.0}\zihao{-4}\sffamily\raggedright,
+        format = \linespread{1.0}\zihao{4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
         beforeskip = {24pt},
@@ -381,7 +381,7 @@
 %- subsection
 \ctexset {
     subsection = {
-        format = \linespread{1.0}\zihao{-4}\sffamily\raggedright,
+        format = \linespread{1.0}\zihao{4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
         beforeskip = {12pt},
@@ -391,7 +391,7 @@
 %- subsubsection
 \ctexset {
     subsubsection = {
-        format = \linespread{1.0}\zihao{-4}\sffamily\raggedright,
+        format = \linespread{1.0}\zihao{4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
         beforeskip = {12pt},
