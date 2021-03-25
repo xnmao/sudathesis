@@ -81,10 +81,6 @@ merger.write('10285_20184214032_LW.pdf') # 合并
 ```latex
         \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
 ```
-以及在`style/sudathesis.cls`文件中更改章节序号显示为中文：
-```latex
-        number = \zhnum{chapter},
-```
 这可能导致如果文章中需要附录时，附录的页眉不好设置。
 
 #### 其它
