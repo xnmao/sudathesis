@@ -1,12 +1,102 @@
 # `sudathesis` 苏州大学学位论文 LaTeX 模板
 
+
 ## 模板下载
 
 * 页面右边点击：**Code -> Download ZIP**
 
+
 ## 模板简介
- 
-* forked from [mohuangrui/ucasthesis](<https://github.com/mohuangrui/ucasthesis>)
+
+模板基于[mohuangrui/ucasthesis](<https://github.com/mohuangrui/ucasthesis>)。
+因此，使用该模板前建议先尝试`ucasthesis`能否编译成功。
+然后阅读该模板的对`ucasthesis`的**主要更改**和**注意事项**。
+
+### 主要更改
+
+#### 页边距及排版方式
+
+已遵照《苏州大学研究生学位论文基本格式》，即“版心内心尺寸为155×230mm，含页眉、页码的版心尺寸为155×250mm”。
+在`thesis.tex`中可设置排版方式：
+```latex
+\documentclass[oneside]{style/ucasthesis}% 单面排版，适合作为电子版
+\documentclass[twoside]{style/ucasthesis}% 双面排版，适合作为电子版
+\documentclass[print]{style/ucasthesis}% 预留装订距离的双面排版，适合作为纸质打印版
+```
+PS:《苏州大学研究生学位论文基本格式》要求“使用时左侧要留出2.5cm以备装订”。
+这一点有些奇怪，因为A4纸宽210mm，文字宽度要求155mm，
+如果文字居中，则左右皆有2.75cm的边距，已经满足2.5cm的装订要求。
+因此我在`print`版中，设置的是左边距30mm（用于装订），右边距25mm。
+
+#### 字体字号
+
+已遵照《基本格式》，即“标题用小二号黑体（或标宋体）；正文用4号或小4号宋体，小标题用4号黑体”。
+在这份模板中：
+标题是小二号黑体，正文是小四号宋体，小标题是四号黑体。
+
+参考文献的字体字号在`thesis.tex`中设置：
+```latex
+\renewcommand{\bibfont}{\zihao{-4}}% 参考文献使用小4号
+```
+《基本格式》中要求“参考文献及附录内容用4号或小4号楷体”。
+这份模板没有设置楷体（因为楷体`\itshape`或`\textit`对应的英文字体看上去很奇怪？）。
+如果有内容用到楷体，需要自行调整。
+
+#### 其它
+
+其它在《基本格式》中未提及的要求，例如行间距、段间距等，都遵循了源代码usasthesis即国科大指导文件的格式要求。
+
+
+### 注意事项
+
+#### 封面
+
+不建议使用该模板自动生成封面。
+自动生成的封面和研究生院提供的封面模板不一致。
+苏大封面太难做了。
+因此，建议在`tex/frontmatter.tex`中删除或注释`\maketitle`行：
+```latex
+%-> 封面
+%-
+% \maketitle% 自动生成封面
+%-
+```
+然后使用研究生院提供的word封面模板，导出pdf文件，把它与论文pdf拼接起来。
+很多工具都能拼接pdf，比如[ilovepdf](<https://www.ilovepdf.com/>)。
+也可使用Python工具：
+```python
+from PyPDF2 import PdfFileMerger
+
+merger = PdfFileMerger()
+for file in ('cover.pdf', 'thesis.pdf'): # 封面，正文
+    merger.append(file)
+merger.write('10285_20184214032_LW.pdf') # 合并
+```
+最终的封面都由学校指定印刷单位按学校规定统一制作。
+
+#### 页眉
+
+我在编译ucasthesis源代码时遇到了类似的问题（https://github.com/mohuangrui/ucasthesis/issues/320）。
+所以更改了`style/artratex.sty`的第706行：
+```latex
+        \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
+```
+以及在`style/sudathesis.cls`文件中更改章节序号显示为中文：
+```latex
+        number = \zhnum{chapter},
+```
+这可能导致如果文章中需要附录时，附录的页眉不好设置。
+
+#### 其它
+
+我改这份模板时，遵照的是硕士(学术学位)的要求。
+所以删去了`ucasthesis`中不相关的本科和博后选项。
+博士论文要求似乎和硕士差不多？我没有仔细核实。
+
+我的论文中没有使用附录，
+如果需要，
+附录的字体和页眉都需要调整。
+
 
 ## 苏州大学研究生院-学位工作
 * 相关表格下载(含格式要求):
