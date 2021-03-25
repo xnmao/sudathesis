@@ -19,9 +19,9 @@
 已遵照《苏州大学研究生学位论文基本格式》，即“版心内心尺寸为155×230mm，含页眉、页码的版心尺寸为155×250mm”。
 在`thesis.tex`中可设置排版方式：
 ```latex
-\documentclass[oneside]{style/ucasthesis}% 单面排版，适合作为电子版
-\documentclass[twoside]{style/ucasthesis}% 双面排版，适合作为电子版
-\documentclass[print]{style/ucasthesis}% 预留装订距离的双面排版，适合作为纸质打印版
+\documentclass[oneside]{style/sudathesis}% 单面排版，适合作为电子版
+\documentclass[twoside]{style/sudathesis}% 双面排版，适合作为电子版
+\documentclass[print]{style/sudathesis}% 预留装订距离的双面排版，适合作为纸质打印版
 ```
 PS:《苏州大学研究生学位论文基本格式》要求“使用时左侧要留出2.5cm以备装订”。
 这一点有些奇怪，因为A4纸宽210mm，文字宽度要求155mm，
