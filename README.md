@@ -3,7 +3,7 @@
 
 ## 模板下载
 
-* 页面右边点击：**Code -> Download ZIP**
+* 页面右边点击：**Code -> [Download ZIP](<https://github.com/maoxinnan123/sudathesis/archive/refs/heads/master.zip>)**
 
 
 ## 模板简介
@@ -76,7 +76,7 @@ merger.write('10285_20184214032_LW.pdf') # 合并
 
 #### 页眉
 
-我在编译ucasthesis源代码时遇到了类似的问题（https://github.com/mohuangrui/ucasthesis/issues/320）。
+我在编译ucasthesis源代码时遇到了类似的问题（<https://github.com/mohuangrui/ucasthesis/issues/320>）。
 所以更改了`style/artratex.sty`的第706行：
 ```latex
         \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
