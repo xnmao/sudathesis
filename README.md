@@ -74,28 +74,11 @@ merger.write('10285_20184214032_LW.pdf') # 合并
 ```
 最终的封面都由学校指定印刷单位按学校规定统一制作。
 
-#### 页眉
-
-我在编译ucasthesis源代码时遇到了类似的问题（<https://github.com/mohuangrui/ucasthesis/issues/320>）。
-所以更改了`style/artratex.sty`的第706行：
-```latex
-        \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
-```
-以及在`style/sudathesis.cls`文件中更改章节序号显示为中文：
-```latex
-        number = \zhnum{chapter},
-```
-这可能导致如果文章中需要附录时，附录的页眉不好设置。
-
 #### 其它
 
 我改这份模板时，遵照的是硕士(学术学位)的要求。
 所以删去了`ucasthesis`中不相关的本科和博后选项。
 博士论文要求似乎和硕士差不多？我没有仔细核实。
-
-我的论文中没有使用附录，
-如果需要，
-附录的字体和页眉都需要调整。
 
 
 ## 苏州大学研究生院-学位工作

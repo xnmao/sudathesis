@@ -67,14 +67,13 @@
 %-
 \mainmatter% initialize the environment
 \input{tex/mainmatter}% 各章内容
-% %-
-% %-> Appendix
-% %-
-% \cleardoublepage%
-% \appendix% initialize the environment
-% \fancyhead[LE,RO]{\footnotesize 附录}% structure elements
-% \fancyhead[LO,RE]{\footnotesize 此处需要重新输入一次大标题}% 临时解决方案
-% \input{tex/appendix}% 附录
+%-
+%-> Appendix
+%-
+\cleardoublepage%
+\appendix% initialize the environment
+\fancyhead[LE,RO]{\footnotesize 附录\Alph{chapter}}% structure elements
+\input{tex/appendix}% 附录
 %-
 %-> Backmatter: bibliography
 %-
