@@ -547,7 +547,7 @@
 %-> Figure environment support
 %-
 \RequirePackage{graphicx}% packages for including graphics
-\RequirePackage[format=plain,hangindent=2.0em,font={small,bf},skip=8pt,labelsep=space]{caption}% options: [margin=10pt,labelfont=bf]
+\RequirePackage[format=plain,hangindent=2.0em,justification=centerlast,font={small,bf},skip=8pt,labelsep=space]{caption}% options: [margin=10pt,labelfont=bf]
 \RequirePackage{subcaption}% package for subfigures
 \RequirePackage[list=off]{bicaption}% package for binary captions
 \DeclareCaptionOption{bi-first}[]{}% 1st language
@@ -673,11 +673,11 @@
 \setcounter{secnumdepth}{3}% depth for section numbering, default is 2(subsub)
 %- Set equation, figure, table numbering
 %\numberwithin{equation}{section}% set enumeration level
-%\renewcommand{\theequation}{\thesection\arabic{equation}}% configure the label style
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}% configure the label style
 %\numberwithin{figure}{section}% set enumeration level
-%\renewcommand{\thefigure}{\thesection\arabic{figure}}% configure the label style
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}% configure the label style
 %\numberwithin{table}{section}% set enumeration level
-%\renewcommand{\thetable}{\thesection\arabic{table}}% configure the label style
+\renewcommand{\thetable}{\thechapter-\arabic{table}}% configure the label style
 %- Set bibliography entry
 \ifartx@bibtex%
     \setlength{\bibsep}{0.0ex plus 0.2ex minus 0.2ex}% set distance between entries
@@ -712,22 +712,25 @@
     %- Define different kinds of header and footer for different parts
     \fancypagestyle{frontmatterstyle}{% style for frontmatter
         \fancyhf{}% clear fields
-        \fancyhead[C]{\footnotesize \ifnumodd{\value{page}}{\leftmark}{\@title}}% structure elements
+        \fancyhead[LE,RO]{\footnotesize \leftmark}% structure elements
+        \fancyhead[LO,RE]{\footnotesize \@title}
         \fancyfoot[C]{\footnotesize \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
     \fancypagestyle{mainmatterstyle}{% style for mainmatter
         \fancyhf{}% clear fields
-        \fancyhead[C]{\footnotesize \ifnumodd{\value{page}}{\leftmark}{\@title}}% structure elements
-        \fancyfoot[C]{\footnotesize \ifnumodd{\value{page}}{\hspace*{\fill}\thepage}{\thepage\hspace*{\fill}}}% page number
+        \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
+        \fancyhead[LO,RE]{\footnotesize \@title}
+        \fancyfoot[C]{\footnotesize \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
     \fancypagestyle{backmatterstyle}{% header and footer style for backmatter
         \fancyhf{}% clear fields
-        \fancyhead[C]{\footnotesize \ifnumodd{\value{page}}{\leftmark}{\@title}}% structure elements
-        \fancyfoot[C]{\footnotesize \ifnumodd{\value{page}}{\hspace*{\fill}\thepage}{\thepage\hspace*{\fill}}}% page number
+        \fancyhead[LE,RO]{\footnotesize \leftmark}% structure elements
+        \fancyhead[LO,RE]{\footnotesize \@title}
+        \fancyfoot[C]{\footnotesize \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
