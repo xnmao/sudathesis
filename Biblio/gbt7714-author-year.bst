@@ -65,7 +65,7 @@ FUNCTION {load.config}
   #1 'terms.in.macro :=
   #0 'year.after.author :=
   #0 'period.after.author :=
-  #1 'sentence.case.title :=
+  #0 'sentence.case.title :=
   #0 'link.title :=
   #1 'title.in.journal :=
   #1 'show.mark :=
