@@ -107,7 +107,7 @@
 %- binding side width of [odd, even] page = [left, right] side width
 %- left side width of [odd, even] page = 1.0in (fixed) + hoffset + [odd, even]sidemargin
 %- assuming A4 paper (210mm x 297mm)
-\setlength{\textwidth}{155mm}% set required text width first
+\setlength{\textwidth}{155mm}% 版心内心尺寸为155x230mm
 \setlength{\hoffset}{-1.0in}% set horizontal offset
 \ifsuda@print% if print layout enabled
     \setlength{\oddsidemargin}{30mm}% binding side margin
@@ -121,16 +121,16 @@
 %- part two -- vertical heights
 %- top height + textheight + bottom height = paperheight
 %- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep 
-\setlength{\textheight}{230mm}% set required text height first
+\setlength{\textheight}{230mm}% 版心内心尺寸为155x230mm
 \setlength{\voffset}{-1.0in}% set vertical offset
-\setlength{\topmargin}{23.5mm}% vertical margin above header
+\setlength{\topmargin}{2.0cm}% 页眉距边界2.0厘米
 \setlength{\headheight}{0mm}% header height
-\setlength{\headsep}{17.5pt}% vertical margin between header and body text
-\setlength{\footskip}{10.4mm}% vertical margin between footer and body text
+\setlength{\headsep}{7.06mm}% 20pt折算。含页眉、页码的版心尺寸为155x250mm
+\setlength{\footskip}{12.94mm}% 250mm-230mm-20pt折算。含页眉、页码的版心尺寸为155x250mm
 %- specifies the amount of space between paragraphs.
 \setlength{\parskip}{0ex plus 0.25ex minus 0.25ex}
 %- line spacing
-\linespread{1.5}% line space setting
+\linespread{1.7}% 相当于msword正文小四字号的1.5倍行间距
 \raggedbottom% prevent adding vertical white space in strange places
 %- default pagestyle is page number at bottom without headers and footers
 \pagestyle{plain}
@@ -232,41 +232,41 @@
 %- chapter
 \ctexset {
     chapter = {
-        format = \linespread{1.5}\zihao{-2}\bfseries\sffamily\centering,
+        format = \linespread{1.7}\zihao{-2}\bfseries\sffamily\centering,
         nameformat = {},
         titleformat = {},
         number = \zhnum{chapter},
         numberformat = \rmfamily,
         aftername = \quad,
-        beforeskip = {7pt},
-        afterskip = {18pt},
+        beforeskip = {-10pt},% 折算msword的实际位置。段前24磅
+        afterskip = {26pt},% 折算msword的实际位置。段后18磅
         pagestyle = plain,
     }
 }
 %- section
 \ctexset {
     section = {
-        format = \linespread{1.5}\zihao{4}\sffamily\raggedright,
+        format = \linespread{1.7}\zihao{4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
-        beforeskip = {24pt},
-        afterskip = {6pt},
+        beforeskip = {24pt},% 段前24磅
+        afterskip = {12pt},% 折算msword的实际位置。段后6磅
     }
 }
 %- subsection
 \ctexset {
     subsection = {
-        format = \linespread{1.5}\zihao{4}\sffamily\raggedright,
+        format = \linespread{1.7}\zihao{-4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
-        beforeskip = {12pt},
-        afterskip = {6pt},
+        beforeskip = {12pt},% 段前12磅
+        afterskip = {6pt},% 段后6磅
     }
 }
 %- subsubsection
 \ctexset {
     subsubsection = {
-        format = \linespread{1.5}\zihao{4}\sffamily\raggedright,
+        format = \linespread{1.7}\zihao{-4}\sffamily\raggedright,
         numberformat = \rmfamily,
         aftername = \quad,
         beforeskip = {12pt},

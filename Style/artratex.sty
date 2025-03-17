@@ -712,25 +712,25 @@
     %- Define different kinds of header and footer for different parts
     \fancypagestyle{frontmatterstyle}{% style for frontmatter
         \fancyhf{}% clear fields
-        \fancyhead[LE,RO]{\footnotesize \leftmark}% structure elements
-        \fancyhead[LO,RE]{\footnotesize \@title}
-        \fancyfoot[C]{\footnotesize \thepage}% page number
+        \fancyhead[LE,RO]{\zihao{-5} \leftmark}% structure elements
+        \fancyhead[LO,RE]{\zihao{-5} \@title}
+        \fancyfoot[C]{\zihao{-5} \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
     \fancypagestyle{mainmatterstyle}{% style for mainmatter
         \fancyhf{}% clear fields
-        \fancyhead[LE,RO]{\footnotesize 第\zhnum{chapter}章}% structure elements
-        \fancyhead[LO,RE]{\footnotesize \@title}
-        \fancyfoot[C]{\footnotesize \thepage}% page number
+        \fancyhead[LE,RO]{\zihao{-5} \leftmark}% structure elements
+        \fancyhead[LO,RE]{\zihao{-5} \@title}
+        \fancyfoot[C]{\zihao{-5} \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
     \fancypagestyle{backmatterstyle}{% header and footer style for backmatter
         \fancyhf{}% clear fields
-        \fancyhead[LE,RO]{\footnotesize \leftmark}% structure elements
-        \fancyhead[LO,RE]{\footnotesize \@title}
-        \fancyfoot[C]{\footnotesize \thepage}% page number
+        \fancyhead[LE,RO]{\zihao{-5} \leftmark}% structure elements
+        \fancyhead[LO,RE]{\zihao{-5} \@title}
+        \fancyfoot[C]{\zihao{-5} \thepage}% page number
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
