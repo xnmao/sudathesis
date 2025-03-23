@@ -8,9 +8,9 @@
 
 ## 模板简介
 
-模板基于[mohuangrui/ucasthesis](<https://github.com/mohuangrui/ucasthesis>)。
-因此，使用该模板前建议先尝试`ucasthesis`能否编译成功。
-然后阅读该模板的对`ucasthesis`的**主要更改**和**注意事项**。
+模板基于[mohuangrui/ucasthesis](<https://github.com/mohuangrui/ucasthesis>)。  
+请使用XeLaTeX编译器，以确保目录标题中的英文字母为Times New Roman。
+请阅读该模板的对`ucasthesis`的**主要更改**和**注意事项**。
 
 ### 主要更改
 
@@ -47,7 +47,7 @@ PS:《苏州大学研究生学位论文基本格式》要求“使用时左侧�
 
 #### 其它
 
-其它在《基本格式》中未提及的要求，例如行间距、段间距等，都遵循了源代码usasthesis即国科大指导文件的格式要求。
+由于行间距和段间距在MS Word与LaTeX中的定义存在差异，本样式中的相关设置已对齐至MS Word的显示效果。
 
 
 ### 注意事项
@@ -58,12 +58,22 @@ PS:《苏州大学研究生学位论文基本格式》要求“使用时左侧�
 很多工具都能拼接pdf，比如[ilovepdf](<https://www.ilovepdf.com/>)。
 也可使用Python工具：
 ```python
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfReader, PdfWriter
 
-merger = PdfFileMerger()
-for file in ('cover.pdf', 'thesis.pdf'): # 封面，正文
-    merger.append(file)
-merger.write('10285_20184214032_LW.pdf') # 合并
+stream = {
+    'cover.pdf': range(1000),
+    'thesis.pdf': range(1000),
+}
+
+writer = PdfWriter()
+for fn, index in stream.items():
+    reader = PdfReader(fn)
+    for i in index:
+        try:
+            writer.add_page(reader.pages[i])
+        except IndexError:
+            break
+writer.write(open('20224014005_毛心楠_LW.pdf', 'wb'))
 ```
 最终的封面都由学校指定印刷单位按学校规定统一制作。
 
