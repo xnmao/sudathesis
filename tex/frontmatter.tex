@@ -1,0 +1,46 @@
+%---------------------------------------------------------------------------%
+%->> Frontmatter
+%---------------------------------------------------------------------------%
+%-
+%-> 中文摘要
+%-
+\intobmk\chapter*{中文摘要}\chaptermark{中文摘要}% 显示在书签但不显示在目录
+\setcounter{page}{1}% 开始页
+\pagenumbering{Roman}% 页码符号
+
+论文第一页为中文摘要，主要是对论文的研究成果进行高度概括，力求用最简练的语言对论文的背景、研究目的、研究方法、主要研究工作与成果、创新点及结论进行高度的凝练。
+硕士学位论文中文摘要约500字左右，博士学位论文中文摘要约1000字左右。
+
+关键词一般为3--5个，每个关键词中间用分号分隔。
+
+\keywords{关键词1；关键词2；关键词3；关键词4；关键词5}
+
+\vspace*{\baselineskip}\hfill{}{\begin{tabular}{rcc}% 创建表格
+	\makebox[5.5em][s]{作\hspace{\fill}者：} & 毛心楠 &\\
+	\makebox[5.5em][s]{指\hspace{\fill}导\hspace{\fill}教\hspace{\fill}师：} & *** &
+\end{tabular}}
+%-
+%-> 英文摘要
+%-
+\intobmk\chapter*{此处写上论文英文标题}\chaptermark{Abstract}% 显示在书签但不显示在目录
+%\fancyhead[LO,RE]{\footnotesize 英文标题第1行\\英文标题第2行}% 页眉显示英文标题
+\centerline{\zihao{3}\bfseries\sffamily{Abstract}}
+\vspace*{18pt}% Abstract标题段后间距
+{
+%\setlength{\headsep}{\dimexpr 17.5pt + 1em\relax}% 如果页眉的英文标题换行需要补偿间距
+
+The abstract of a dissertation is a summary of the research works.
+The abstract should be concise and to the point, and the main content in the abstract should consist of the description of the research works, results, novelty and conclusions.
+
+A maximum of 5 keywords should be contained, and semi-colons should be included between two keywords.
+
+\KEYWORDS{Keyword 1; Keyword 2; Keyword 3; Keyword 4; Keyword 5}
+
+\vspace*{\baselineskip}\hfill{}\begin{tabular}{rcc}% 创建表格
+		\makebox[13.5ex][s]{Written\hspace{\fill}by:} & Xinnan Mao &\\
+		\makebox[13.5ex][s]{Supervised\hspace{\fill}by:} & *** &
+\end{tabular}
+%\newpage% 补偿间距作用到最后1页
+%\newpage% 补偿间距抵消双页排版问题
+}
+%---------------------------------------------------------------------------%
